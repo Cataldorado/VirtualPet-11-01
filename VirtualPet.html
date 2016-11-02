@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/style.css">
+    <title>Virtual Pet Object</title>
+    <!--  -->
+    <style>
+    #hunger {
+            color: white;
+            height: 20px;
+            width: 100px;
+            background-color: #19c251;
+        }
+        
+     #happy {
+            color: white;
+            height: 20px;
+            width: 100px;
+            background-color: #d9534f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="row">
+        <div class="col-md-4">
+        <div id="show"></div>
+        <br/>
+        <div>Hunger Level</div>
+        <div id="hunger"></div>
+        <br/>
+        <div>Happiness Level</div>
+         <div id="happy"></div>
+        <br/>
+        <button class = "btn btn-danger" id="playWith" onClick='Pet.prototype.playBall()'>Play</button>
+        <button class= "btn btn-success" id="feedIt" onClick='Pet.prototype.feed()'>Feed</button>
+            </div>
+            <div class="col-md-6">
+            
+               <div class="husky">
+  <div class="mane">
+    <div class="coat"></div>
+  </div>
+  <div class="body">
+    <div class="head">
+      <div class="ear"></div>
+      <div class="ear"></div>
+      <div class="face">
+        <div class="eye"></div>
+        <div class="eye"></div>
+        <div class="nose"></div>
+        <div class="mouth">
+          <div class="lips"></div>
+          <div class="tongue"></div>
+        </div>
+      </div>
+    </div>
+    <div class="torso"></div>
+  </div>
+  <div class="legs">
+    <div class="front-legs">
+      <div class="leg"></div>
+      <div class="leg"></div>
+    </div>
+    <div class="hind-leg">
+    </div>
+  </div>
+  <div class="tail">
+    <div class="tail">
+      <div class="tail">
+        <div class="tail">
+          <div class="tail">
+            <div class="tail">
+              <div class="tail"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none">
+  <defs>
+
+    
+    <filter id="squiggly-0">
+      <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="0"/>
+      <feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="2" />
+    </filter>
+    <filter id="squiggly-1">
+      <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="1"/>
+<feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+    </filter>
+    
+    <filter id="squiggly-2">
+      <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="2"/>
+<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+    </filter>
+    <filter id="squiggly-3">
+      <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="3"/>
+<feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+    </filter>
+    
+    <filter id="squiggly-4">
+      <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="4"/>
+<feDisplacementMap in="SourceGraphic" in2="noise" scale="1" />
+    </filter>
+  </defs> 
+</svg>
+            
+            
+            </div>
+        </div>
+        
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script>
+        
+//Pet Class
+function Pet(name,currentHappy,currentHunger,maxHappy,maxHunger) {
+    this.name = dog.name;
+    this.currentHappy = 100;
+    this.currentHunger = 100;
+    this.maxHappy = maxHappy;
+    this.maxHunger =  maxHunger;
+    
+    //Set Interval timer-Triggers an event every two seconds-JR
+    var _this = this;
+    _this.randInterval = setInterval(eventInterval, 2000);
+       
+    }
+var dog = {
+    name:'Spot',
+    currentHappy: this.currentHappy,
+    currentHunger: this.currentHunger,
+    maxHappy: 100,
+    maxHunger: 100
+    }
+var dog = new Pet(dog);
+        
+var pet = new Pet();
+console.log(dog);      
+console.log(hunger);
+console.log(happy);
+        
+var newPetView = buildPetView(dog);
+showView(newPetView, 'show');
+var currentHungerView =  dog.currentHunger +'px';
+showStateView(currentHungerView, 'hunger');
+var currentHappyView =  dog.currentHappy +'px';
+showStateView(currentHappyView, 'happy');
+//Function creates a interval timer using the this.randInterval variable.-JR
+
+        function eventInterval()
+{
+    //Tim's rand num function goes here.
+   Pet.prototype.checkStatus(this.currentHappy,this.currentHunger);
+}
+Pet.prototype.getRandom = function(min, max){
+//     function getRandom(min, max){
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+Pet.prototype.checkStatus = function(hunger, happiness){
+//function checkStatus(hunger, happiness) {
+this.happy = pet.currentHappy;
+this.hunger = pet.currentHunger;
+console.log(happy);
+    
+if (Pet.prototype.getRandom(0, 1) == 0) {
+ 
+console.log('your pet is hungry! Feed it');
+console.log(pet.currentHunger = this.hunger - 10);
+document.getElementById('hunger').style.width = pet.currentHunger +'px';
+//showMessage();
+Pet.prototype.checkLife();
+} else { 
+console.log('your pet is Bored! play with it');
+console.log(pet.currentHappy = this.happy - 10);
+document.getElementById('happy').style.width = pet.currentHappy +'px';
+        }
+Pet.prototype.checkLife();
+return;
+}
+        //start play/feed button functions
+Pet.prototype.playBall = function (){
+//function playBall() {
+pet.currentHappy = pet.currentHappy + 10;
+document.getElementById('happy').style.width = pet.currentHappy +'px';
+console.log(pet.currentHappy);
+
+return;
+}
+
+Pet.prototype.feed = function(){
+//function feed() {
+    pet.currentHunger = pet.currentHunger + 10;
+document.getElementById('hunger').style.width = pet.currentHunger +'px';
+console.log(pet.currentHunger);
+return;
+}
+
+Pet.prototype.checkLife = function(){
+//function checkLife() {
+if (pet.currentHunger <= 0) {
+console.log('your pet wasnt fed enough!  it died');
+document.getElementById("container").innerHTML = "You didn't feed your pet enough. It died of starvation" + '<br>'+ '<button onclick="reloadPage()">Play Again</button>';
+clearInterval(this.randInterval);
+return;
+} if (pet.currentHappy <= 0) {
+console.log('you didnt play with your pet enough!  It died of boredom');
+document.getElementById("container").innerHTML = "You didn't play with your pet enough. It died of boredom" + '<br>'+ '<button onclick="reloadPage()">Play Again</button>';
+clearInterval(this.randInterval);
+}
+if (pet.currentHappy > 100) {
+console.log('You played too much with your pet! It had a heartattack and died');
+document.getElementById("container").innerHTML = "You played too much with your pet! It had a heartattack and died" + '<br>'+ '<button onclick="reloadPage()">Play Again</button>';
+clearInterval(this.randInterval);
+}
+if (pet.currentHunger > 100) {
+console.log('You fed your pet too much! Its stomach ruptured and it died');
+document.getElementById("container").innerHTML = "You fed your pet too much! Its stomach ruptured and it died" + '<br>'+ '<button onclick="reloadPage()">Play Again</button>';
+clearInterval(this.randInterval);
+}
+
+}   
+        //refreshes page   
+    function reloadPage() {
+    location.reload();
+}
+           
+            
+function buildPetView(petObj) {
+//got have something to concatinate
+    var text = '';
+    text += '<h2>Hey, my name is ' +petObj.name + '</h2>';
+    text += '<h3>I wanna play! PLAY! Please play with ' +petObj.name + '!</h3>';
+//    text += '<p>currentHappy ' +petObj.currentHappy+'</p>';
+//    text += '<p>currentHunger ' +petObj.currentHunger+'</p>';
+//     text += '<p>Max Happy ' +petObj.maxHappy+'</p>';
+//    text += '<p>Max Hunger ' +petObj.maxHunger+'</p>';
+    return text;
+}
+function showView(petViewObj, elem) {
+    //dynamic
+    document.getElementById(elem).innerHTML = petViewObj;
+    }
+function showStateView(stateLevel, elem) {
+ 
+     document.getElementById(elem).style.width = stateLevel;
+    }
+         
+    </script>
+</body>
+</html>
